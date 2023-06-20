@@ -1,0 +1,36 @@
+class Point:
+	def __init__(self, x, y):
+		self.x = x
+		self.y = y
+		
+	
+	def __str__(self):
+		return "({}, {})".format(self.x, self.y)
+
+
+class Rectangle:
+
+	def __init__(self, posn, w, h):
+		self.corner = posn
+		self.width = w
+		self.height = h
+
+
+	def __str__(self):
+		return "({0}, {1}, {2})".format(self.corner, self.width, self.height)
+		
+		
+def create_rectangle(x, y, width, height):
+	posn = Point(x, y)
+	rect1= Rectangle(posn, width, height)
+	return rect1
+
+
+def str_rectangle(rect):
+	rectstr = rect.__str__()
+	return rectstr
+
+
+def shift_rectangle(rect, dx, dy):
+	rect.corner.x += dx
+	rect.corner.y += dy
